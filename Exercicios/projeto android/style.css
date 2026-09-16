@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+    
+    --bg-body: #c5ebd6;
+    --bg-main: #ffffff;
+    --text-color: #000000;
+    --bg-aside: #83e1ad;
+    --bg-card: #f9f9f9;
+    
+    --fonte-padrao: 'Roboto', sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+}
+
+/* MODO ESCURO (APLICADO NA RAIZ) */
+:root.dark-mode {
+    --cor0: #121212;
+    --cor1: #1e3a2b;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #83e1ad;
+    --cor5: #021a0d;
+    
+    --bg-body: #121212;
+    --bg-main: #1e1e1e;
+    --text-color: #e0e0e0;
+    --bg-aside: #1e3a2b;
+    --bg-card: #282828;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    font-family: var(--fonte-padrao);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transições Globais para Troca Suave de Tema */
+main, aside, header, nav, footer, input, textarea, .bibliografia {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Destaque de Acessibilidade ao Navegar por Teclado */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--cor2);
+    outline-offset: 3px;
+}
+
+/* Header */
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 15px;
+    color: white;
+    position: relative;
+}
+
+header h1 {
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+header p {
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 25px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+/* Barra de Acessibilidade Integarda */
+.accessibility-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.accessibility-bar button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    min-width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.accessibility-bar button:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: scale(1.05);
+}
+
+.font-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.audio-player-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.audio-player-bar button {
+    padding: 0 12px;
+    gap: 5px;
+}
+
+.audio-player-bar button.playing {
+    background-color: var(--cor2);
+    color: var(--cor5);
+    border-color: var(--cor2);
+}
+
+.btn-theme {
+    padding: 0 12px !important;
+    gap: 6px;
+}
+
+/* Navegação por Abas */
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+    text-align: left;
+}
+
+nav a {
+    color: var(--cor1);
+    padding: 12px 16px;
+    min-height: 48px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo do Link da Aba Ativa */
+nav a.active {
+    background-color: var(--cor2);
+    color: #063d1e;
+}
+
+/* Conteúdo Principal e Abas */
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--bg-main);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main h1 {
+    color: var(--cor4);
+    font-size: 1.8em;
+    font-family: var(--fonte-destaque);
+    font-weight: normal;
+}
+
+main h2 {
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+    margin: 20px 0;
+    font-family: var(--fonte-destaque);
+    font-weight: normal;
+}
+
+main p {
+    margin: 15px 0;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.6em;
+    font-size: 1em;
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: var(--cor1);
+    padding: 3px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: var(--cor3);
+    transform: translateY(-1px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagens Padrão */
+img {
+    width: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img.pequena {
+    max-width: 350px;
+}
+
+.legenda {
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+/* Animações dos Robôs */
+.img-animated-container {
+    display: block;
+    text-align: center;
+}
+
+.robo-animated {
+    cursor: pointer;
+    animation: floatAnimation 3.5s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.robo-animated.pop-in {
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), floatAnimation 3.5s ease-in-out infinite 0.6s;
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.robo-animated.shake {
+    animation: shakeEffect 0.5s ease-in-out !important;
+}
+
+@keyframes shakeEffect {
+    0%, 100% { transform: rotate(0deg); }
+    20% { transform: rotate(-8deg); }
+    40% { transform: rotate(8deg); }
+    60% { transform: rotate(-5deg); }
+    80% { transform: rotate(5deg); }
+}
+
+/* Vídeo Responsivo */
+div.video {
+    background-color: var(--cor5);
+    margin: 20px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 56.5%;
+    position: relative;
+    border-radius: 4px;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 4px;
+}
+
+/* Seção de Curiosidades (Aside) */
+aside {
+    background-color: var(--bg-aside);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+}
+
+aside h3 {
+    background-color: var(--cor3);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 10px -10px;
+    border-radius: 10px 10px 0px 0px;
+    font-family: var(--fonte-padrao);
+}
+
+aside ul {
+    list-style-type: none;
+    columns: 2;
+    padding: 10px;
+}
+
+aside ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+aside ul li::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url('imagens/bugdroid.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* Links da Lista do Aside */
+aside ul li a {
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+aside ul li a:hover {
+    background-color: var(--cor3);
+    color: white;
+}
+
+/* Seção de Bibliografia / Fontes */
+.bibliografia {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--bg-card);
+    border-left: 5px solid var(--cor3);
+    border-radius: 5px;
+}
+
+.bibliografia ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.bibliografia li {
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+.bibliografia li:target {
+    background-color: var(--cor1);
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.5s ease;
+}
+
+/* Formulário da Aba Fale Conosco */
+.form-contato {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-contato .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-contato label {
+    font-weight: bold;
+    color: var(--cor4);
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 12px;
+    border: 1px solid var(--cor3);
+    border-radius: 5px;
+    font-family: var(--fonte-padrao);
+    font-size: 1em;
+    background-color: var(--bg-card);
+    color: var(--text-color);
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    outline: none;
+    border-color: var(--cor2);
+    box-shadow: 0 0 5px var(--cor2);
+}
+
+.btn-enviar {
+    background-color: var(--cor3);
+    color: white;
+    padding: 14px;
+    min-height: 48px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: var(--cor2);
+    color: #000;
+}
+
+/* Rodapé com Caveiras via CSS */
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 10px;
+}
+
+footer p.caveiras::before {
+    content: "💀 ";
+    margin-right: 8px;
+}
+
+footer p.caveiras::after {
+    content: " 💀";
+    margin-left: 8px;
+}
+
+/* Responsividade Avançada */
+@media screen and (max-width: 768px) {
+    main {
+        width: 94%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header p {
+        font-size: 1em;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .accessibility-bar {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav > div > a {
+        flex: 1 1 40%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    aside ul {
+        columns: 1;
+    }
+
+    div.video {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    nav > div > a {
+        flex: 1 1 100%;
+    }
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Meus cursos</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            text-align: center;
+
+            background-image: url("imagem/placapc.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            color: rgb(139, 128, 6);
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .capa {
+            width: 350px;
+            height: 197px;
+            cursor: pointer;
+        }
+
+        #videoSelecionado {
+            display: none;
+        }
+
+        #cursoCompleto {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+
+            color: white;
+            background-color: blue;
+
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .voltar {
+            margin-top: 15px;
+
+            color: blue;
+            font-size: 35px;
+
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Meus Cursos</h1>
+
+    <div id="listaVideos">
+
+        <img
+            class="capa"
+            src="https://img.youtube.com/vi/Ejkb_YpuHWs/maxresdefault.jpg"
+            alt="Primeiro curso"
+            onclick="abrirVideo(
+                'Ejkb_YpuHWs',
+                'https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n'
+            )"
+        >
+
+        <img
+            class="capa"
+            src="https://img.youtube.com/vi/S9uPNppGsGo/maxresdefault.jpg"
+            alt="Segundo curso"
+            onclick="abrirVideo(
+                'S9uPNppGsGo',
+                'https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n'
+            )"
+        >
+
+        <br>
+
+        <img
+            class="capa"
+            src="https://img.youtube.com/vi/jQMbuK6URws/maxresdefault.jpg"
+            alt="Terceiro curso"
+            onclick="abrirVideo(
+                'jQMbuK6URws',
+                'https://www.youtube.com/playlist?list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye'
+            )"
+        >
+
+        <img
+            class="capa"
+            src="https://img.youtube.com/vi/UForX7ehChM/maxresdefault.jpg"
+            alt="Quarto curso"
+            onclick="abrirVideo(
+                'UForX7ehChM',
+                'https://www.youtube.com/playlist?list=PLHz_AreHm4dlKB-34f5v4SYA9xiqoRfqs'
+            )"
+        >
+
+    </div>
+
+    <div id="videoSelecionado">
+
+        <iframe
+            id="player"
+            width="560"
+            height="315"
+            title="Vídeo selecionado"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+        <br>
+
+        <a
+            id="cursoCompleto"
+            href=""
+            target="_blank"
+        >
+            Acessar curso completo
+        </a>
+
+        <br>
+
+        <button
+            class="voltar"
+            onclick="voltar()"
+        >
+            ⬅
+        </button>
+
+    </div>
+
+    <script>
+        function abrirVideo(codigoVideo, linkCurso) {
+            document.getElementById("listaVideos").style.display = "none";
+
+            document.getElementById("videoSelecionado").style.display =
+                "block";
+
+            document.getElementById("player").src =
+                "https://www.youtube.com/embed/" + codigoVideo;
+
+            document.getElementById("cursoCompleto").href =
+                linkCurso;
+        }
+
+        function voltar() {
+            document.getElementById("listaVideos").style.display =
+                "block";
+
+            document.getElementById("videoSelecionado").style.display =
+                "none";
+
+            document.getElementById("player").src = "";
+        }
+    </script>
+
+</body>
+
+</html>

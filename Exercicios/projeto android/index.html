@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História do Mascote do Android</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <!-- Conexão das Fontes Google (Bebas Neue e Roboto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Vinculação do CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Script Anti-Flash para Tema e Fonte -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+            }
+            const savedFontSize = localStorage.getItem('fontSize');
+            if (savedFontSize) {
+                document.documentElement.style.fontSize = savedFontSize + 'px';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <!-- Barra de Acessibilidade (Tamanho da Fonte, Leitor de Voz e Modo Escuro) -->
+        <div class="accessibility-bar">
+            <!-- Controle do Tamanho da Fonte -->
+            <div class="font-controls" aria-label="Controle de tamanho da fonte">
+                <button id="font-decrease" onclick="changeFontSize(-1)" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button id="font-reset" onclick="resetFontSize()" aria-label="Restaurar tamanho da fonte original">A</button>
+                <button id="font-increase" onclick="changeFontSize(1)" aria-label="Aumentar tamanho da fonte">A+</button>
+            </div>
+
+            <!-- Controle do Leitor de Voz -->
+            <div class="audio-player-bar" aria-label="Controle de leitura em voz alta">
+                <button id="btn-play-audio" onclick="togglePlayAudio()" aria-label="Ouvir texto da página">
+                    <span id="audio-icon">🔊</span> <span id="audio-text">Ouvir Página</span>
+                </button>
+                <button id="btn-stop-audio" onclick="stopAudio()" aria-label="Parar leitura" style="display: none;">
+                    ⏹️ Parar
+                </button>
+            </div>
+
+            <!-- Alternador de Tema -->
+            <button id="theme-toggle" class="btn-theme" onclick="toggleTheme()" aria-label="Alternar Modo Escuro">
+                <span id="theme-icon">🌙</span> <span id="theme-text">Modo Escuro</span>
+            </button>
+        </div>
+
+        <h1>CURIOSIDADES DE TECNOLOGIA</h1>
+        <p>Tudo aquilo que você sempre quis saber sobre o mundo Tech, em um único lugar.</p>
+        
+        <nav role="navigation" aria-label="Menu principal">
+            <div role="tablist">
+                <a href="#home" id="tab-home" class="tab-link active" role="tab" aria-selected="true" aria-controls="home" onclick="openTab(event, 'home')">Home</a>
+                <a href="#noticias" id="tab-noticias" class="tab-link" role="tab" aria-selected="false" aria-controls="noticias" onclick="openTab(event, 'noticias')">Notícias</a>
+                <a href="#curiosidades" id="tab-curiosidades" class="tab-link" role="tab" aria-selected="false" aria-controls="curiosidades" onclick="openTab(event, 'curiosidades')">Curiosidades</a>
+                <a href="#fale-conosco" id="tab-fale-conosco" class="tab-link" role="tab" aria-selected="false" aria-controls="fale-conosco" onclick="openTab(event, 'fale-conosco')">Fale Conosco</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- ABA 1: HOME (CONTEÚDO PRINCIPAL) -->
+        <section id="home" class="tab-content active" role="tabpanel" aria-labelledby="tab-home">
+            <article>
+                <h1>História do Mascote do Android</h1>
+                <p>Provavelmente você sabe que o sistema operacional <strong>Android</strong>, mantido pelo <strong>Google</strong> é um dos mais utilizados para dispositivos móveis em todo o mundo. Mas talvez você não saiba que o seu simpático mascote tem um nome e uma história muito curiosa! Pois acompanhe este artigo para aprender mais sobre esse robozinho.</p>
+
+                <h2>A primeira versão</h2>
+                <p>A primeira tentativa de criar um mascote surgiu em 2007 e veio de um desenvolvedor chamado <a href="#ref-dan-morrill">Dan Morrill 🔗</a>. Ele conta que abriu o <a href="#ref-inkscape">Inkscape 🔗</a> (software livre para vetorização de imagens) e criou sua própria versão de robô. O objetivo era apenas personalizar o sistema apenas para a sua equipe, não existia nenhuma solicitação da empresa para a criação de um mascote.</p>
+
+                <!-- Imagem 1: Dandroids -->
+                <picture class="img-animated-container">
+                    <img src="imagens/dan-droids.png" alt="Primeira versão dos mascotes do Android (Dandroids)" class="robo-animated">
+                </picture>
+                <p class="legenda">Essa primeira versão bizarra até foi batizada em homenagem ao seu criador: seriam os Dandroids.</p>
+
+                <h2>Surge um novo mascote</h2>
+                <p>A ideia de ter um mascote foi amadurecendo e a missão foi passada para uma profissional da área. A ilustradora Russa <a href="#ref-irina-blok">Irina Blok 🔗</a>, também funcionária do Google, ficou com a missão de representar o pequeno robô de uma maneira mais agradável.</p>
+
+                <!-- Imagem 2: Irina Blok -->
+                <picture>
+                    <img src="imagens/irina-blok.jpg" alt="Irina Blok, criadora do Bugdroid">
+                </picture>
+
+                <p>A ideia principal da Irina era representar tudo graficamente com poucos traços e de forma mais chapada. O desenho também deveria gerar identificação rápida com quem o olha. Surgiu então o <strong>Bugdroid</strong>, o novo mascote do Android.</p>
+
+                <!-- Imagem 3: Bugdroid -->
+                <picture class="img-animated-container">
+                    <img src="imagens/bugdroid.png" class="pequena robo-animated" alt="Bugdroid e o símbolo de banheiro">
+                </picture>
+
+                <p>A principal inspiração para os traços do novo Bugdroid veio daqueles bonequinhos que ilustram portas de banheiros para indicar o gênero de cada porta. Conta a lenda que a artista estava olhando em sua mesa no escritório do Google e olhou para o lado dos banheiros e a identificação foi imediata: simples, limpo, objetivo.</p>
+
+                <!-- Vídeo Incorporado Responsivo -->
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/l2UDgpLz20M" title="Vídeo demonstrativo sobre a história do Android" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <aside aria-label="Seção informativa sobre versões do Android">
+                    <h3>Quer aprender mais?</h3>
+                    <p>Outro assunto curioso em relação ao Android é que cada versão sempre foi nomeada em homenagem a um doce, em ordem alfabética a partir da versão 1.5 até a 9.0.</p>
+                    
+                    <ul>
+                        <li>1.5 - <a href="https://pt.wikipedia.org/wiki/Android_Cupcake" target="_blank" rel="noopener noreferrer"><abbr title="Bolo de copo">Cupcake</abbr> 🔗</a></li>
+                        <li>1.6 - <a href="https://pt.wikipedia.org/wiki/Android_Donut" target="_blank" rel="noopener noreferrer"><abbr title="Rosquinha">Donut</abbr> 🔗</a></li>
+                        <li>2.0 - <a href="https://pt.wikipedia.org/wiki/Android_Eclair" target="_blank" rel="noopener noreferrer"><abbr title="Bomba">Eclair</abbr> 🔗</a></li>
+                        <li>2.2 - <a href="https://pt.wikipedia.org/wiki/Android_Froyo" target="_blank" rel="noopener noreferrer"><abbr title="Iogurte Congelado">Froyo</abbr> 🔗</a></li>
+                        <li>2.3 - <a href="https://pt.wikipedia.org/wiki/Android_Gingerbread" target="_blank" rel="noopener noreferrer"><abbr title="Biscoito de Gengibre">Gingerbread</abbr> 🔗</a></li>
+                        <li>3.0 - <a href="https://pt.wikipedia.org/wiki/Android_Honeycomb" target="_blank" rel="noopener noreferrer"><abbr title="Favo de Mel">Honeycomb</abbr> 🔗</a></li>
+                        <li>4.0 - <a href="https://pt.wikipedia.org/wiki/Android_Ice_Cream_Sandwich" target="_blank" rel="noopener noreferrer"><abbr title="Sanduíche de Sorvete">Ice Cream Sandwich</abbr> 🔗</a></li>
+                        <li>4.1 - <a href="https://pt.wikipedia.org/wiki/Android_Jelly_Bean" target="_blank" rel="noopener noreferrer"><abbr title="Jujuba">Jelly Bean</abbr> 🔗</a></li>
+                        <li>4.4 - <a href="https://pt.wikipedia.org/wiki/Android_KitKat" target="_blank" rel="noopener noreferrer"><abbr title="KitKat">KitKat</abbr> 🔗</a></li>
+                        <li>5.0 - <a href="https://pt.wikipedia.org/wiki/Android_Lollipop" target="_blank" rel="noopener noreferrer"><abbr title="Pirulito">Lollipop</abbr> 🔗</a></li>
+                        <li>6.0 - <a href="https://pt.wikipedia.org/wiki/Android_Marshmallow" target="_blank" rel="noopener noreferrer"><abbr title="Marshmallow">Marshmallow</abbr> 🔗</a></li>
+                        <li>7.0 - <a href="https://pt.wikipedia.org/wiki/Android_Nougat" target="_blank" rel="noopener noreferrer"><abbr title="Nocciola">Nougat</abbr> 🔗</a></li>
+                        <li>8.0 - <a href="https://pt.wikipedia.org/wiki/Android_Oreo" target="_blank" rel="noopener noreferrer"><abbr title="Oreo">Oreo</abbr> 🔗</a></li>
+                        <li>9.0 - <a href="https://pt.wikipedia.org/wiki/Android_Pie" target="_blank" rel="noopener noreferrer"><abbr title="Torta">Pie</abbr> 🔗</a></li>
+                    </ul>
+
+                    <p>Infelizmente, o Android Q não existiu, pois o Google resolveu pôr fim a essa divertida prática e começou a usar numerações, o que deu origem ao Android 10.</p>
+                    <p>Acesse aqui o site <a href="https://www.android.com/history/" target="_blank" rel="noopener noreferrer">Android History 🔗</a> para conhecer a sequência das versões "adocicadas" e o que cada uma brought para o sistema Android.</p>
+                </aside>
+
+                <!-- SEÇÃO DE BIBLIOGRAFIA / FONTES DA PESQUISA -->
+                <section class="bibliografia">
+                    <h2>Bibliografia e Referências</h2>
+                    <p>Confira os links externos e fontes originais utilizados nesta matéria:</p>
+                    <ul>
+                        <li id="ref-dan-morrill">
+                            <strong>Dan Morrill:</strong> Artigo oficial sobre o surgimento dos Dandroids no <a href="https://android-developers.googleblog.com/2013/01/m-is-for-mascot.html" target="_blank" rel="noopener noreferrer">Android Developers Blog ↗</a>.
+                        </li>
+                        <li id="ref-inkscape">
+                            <strong>Inkscape:</strong> Editor de gráficos vetoriais gratuito e open-source no <a href="https://inkscape.org/pt-br/" target="_blank" rel="noopener noreferrer">Site Oficial do Inkscape ↗</a>.
+                        </li>
+                        <li id="ref-irina-blok">
+                            <strong>Irina Blok:</strong> Portfólio oficial e história da criadora do Bugdroid no <a href="https://www.irinablok.com/" target="_blank" rel="noopener noreferrer">Site Oficial de Irina Blok ↗</a>.
+                        </li>
+                        <li id="ref-android-history">
+                            <strong>Android History:</strong> Cronologia completa das versões e história do sistema no <a href="https://www.android.com/history/" target="_blank" rel="noopener noreferrer">Portal Oficial do Android ↗</a>.
+                        </li>
+                    </ul>
+                </section>
+
+                <p>Então é isso! Espero que você tenha gostado do nosso artigo sobre essa curiosidade sobre o sistema Android e seu simpático mascote.</p>
+            </article>
+        </section>
+
+        <!-- ABA 2: NOTÍCIAS -->
+        <section id="noticias" class="tab-content" role="tabpanel" aria-labelledby="tab-noticias">
+            <h1>Últimas Notícias Tech</h1>
+            <h2>Google anuncia novidades no ecossistema Android</h2>
+            <p>Fique por dentro das últimas atualizações do sistema operacional mobile mais utilizado do mundo. Novos recursos de inteligência artificial e melhorias na privacidade chegam nos próximos meses.</p>
+            
+            <h2>O futuro do ecossistema mobile</h2>
+            <p>Acompanhe análises, testes de dispositivos e novidades da indústria de smartphones e tecnologia vestível.</p>
+        </section>
+
+        <!-- ABA 3: CURIOSIDADES -->
+        <section id="curiosidades" class="tab-content" role="tabpanel" aria-labelledby="tab-curiosidades">
+            <h1>Curiosidades do Mundo Tech</h1>
+            <h2>Por que o nome "Android"?</h2>
+            <p>O nome "Android" vem do apelido de seu fundador, Andy Rubin, dado por seus colegas de trabalho na Apple devido à sua paixão por robôs.</p>
+
+            <h2>Outras marcas e mascotes lendários</h2>
+            <p>Descubra como surgiram os nomes e símbolos de gigantes da tecnologia como a Maçã da Apple, a janela do Windows e o pinguim do Linux.</p>
+        </section>
+
+        <!-- ABA 4: FALE CONOSCO -->
+        <section id="fale-conosco" class="tab-content" role="tabpanel" aria-labelledby="tab-fale-conosco">
+            <h1>Fale Conosco</h1>
+            <p>Tem alguma sugestão, dúvida ou sugestão de pauta de curiosidade? Envie uma mensagem para a nossa equipe!</p>
+            
+            <form class="form-contato" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                </div>
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p class="caveiras">Desenvolvido por Sergio Borges</p>
+    </footer>
+
+    <!-- Lógica JavaScript Integrada -->
+    <script>
+        // 1. TAMANHO DA FONTE DINÂMICO
+        let currentFontSize = parseInt(localStorage.getItem('fontSize')) || 16;
+
+        function changeFontSize(delta) {
+            currentFontSize = Math.min(Math.max(currentFontSize + delta, 12), 22);
+            document.documentElement.style.fontSize = currentFontSize + 'px';
+            localStorage.setItem('fontSize', currentFontSize);
+        }
+
+        function resetFontSize() {
+            currentFontSize = 16;
+            document.documentElement.style.fontSize = '16px';
+            localStorage.removeItem('fontSize');
+        }
+
+        // 2. LEITOR DE VOZ (TEXT-TO-SPEECH)
+        let speechUtterance = null;
+
+        function togglePlayAudio() {
+            const synth = window.speechSynthesis;
+
+            if (synth.paused && synth.speaking) {
+                synth.resume();
+                updateAudioButtons(true);
+                return;
+            }
+
+            if (synth.speaking) {
+                synth.pause();
+                updateAudioButtons(false, true);
+                return;
+            }
+
+            const activeSection = document.querySelector('.tab-content.active');
+            if (!activeSection) return;
+
+            const textToRead = activeSection.innerText;
+
+            speechUtterance = new SpeechSynthesisUtterance(textToRead);
+            speechUtterance.lang = 'pt-BR';
+            speechUtterance.rate = 1.0;
+
+            speechUtterance.onend = () => {
+                stopAudio();
+            };
+
+            synth.speak(speechUtterance);
+            updateAudioButtons(true);
+        }
+
+        function stopAudio() {
+            const synth = window.speechSynthesis;
+            synth.cancel();
+            updateAudioButtons(false);
+        }
+
+        function updateAudioButtons(isPlaying, isPaused = false) {
+            const btnPlay = document.getElementById('btn-play-audio');
+            const btnStop = document.getElementById('btn-stop-audio');
+            const icon = document.getElementById('audio-icon');
+            const text = document.getElementById('audio-text');
+
+            if (isPlaying) {
+                icon.textContent = '⏸️';
+                text.textContent = 'Pausar';
+                btnStop.style.display = 'inline-flex';
+                btnPlay.classList.add('playing');
+            } else if (isPaused) {
+                icon.textContent = '▶️';
+                text.textContent = 'Continuar';
+                btnStop.style.display = 'inline-flex';
+                btnPlay.classList.remove('playing');
+            } else {
+                icon.textContent = '🔊';
+                text.textContent = 'Ouvir Página';
+                btnStop.style.display = 'none';
+                btnPlay.classList.remove('playing');
+            }
+        }
+
+        // 3. NAVEGAÇÃO POR ABAS
+        function openTab(event, tabId) {
+            event.preventDefault();
+
+            // Parar o áudio ao mudar de aba
+            stopAudio();
+
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const links = document.querySelectorAll('.tab-link');
+            links.forEach(link => {
+                link.classList.remove('active');
+                link.setAttribute('aria-selected', 'false');
+            });
+
+            const activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+
+            event.currentTarget.classList.add('active');
+            event.currentTarget.setAttribute('aria-selected', 'true');
+
+            if (tabId === 'home') {
+                triggerRobotAnimations();
+            }
+        }
+
+        // 4. ANIMAÇÃO DOS ROBÔS
+        function triggerRobotAnimations() {
+            const robos = document.querySelectorAll('.robo-animated');
+            robos.forEach(robo => {
+                robo.classList.remove('pop-in');
+                void robo.offsetWidth; 
+                robo.classList.add('pop-in');
+            });
+        }
+
+        // 5. MODO ESCURO (DARK MODE)
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.toggle('dark-mode');
+            document.body.classList.toggle('dark-mode', isDark);
+            
+            updateThemeButton(isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        function updateThemeButton(isDark) {
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            const button = document.getElementById('theme-toggle');
+            
+            if (isDark) {
+                icon.textContent = '☀️';
+                text.textContent = 'Modo Claro';
+                button.setAttribute('aria-label', 'Alternar para Modo Claro');
+            } else {
+                icon.textContent = '🌙';
+                text.textContent = 'Modo Escuro';
+                button.setAttribute('aria-label', 'Alternar para Modo Escuro');
+            }
+        }
+
+        function loadSavedTheme() {
+            const isDark = document.documentElement.classList.contains('dark-mode');
+            document.body.classList.toggle('dark-mode', isDark);
+            updateThemeButton(isDark);
+        }
+
+        // Atalhos de Teclado (Alt + T para Tema | Alt + / Alt - para Fonte)
+        document.addEventListener('keydown', (event) => {
+            if (event.altKey && event.key.toLowerCase() === 't') {
+                event.preventDefault();
+                toggleTheme();
+            } else if (event.altKey && event.key === '+') {
+                event.preventDefault();
+                changeFontSize(1);
+            } else if (event.altKey && event.key === '-') {
+                event.preventDefault();
+                changeFontSize(-1);
+            }
+        });
+
+        // Inicialização ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSavedTheme();
+            triggerRobotAnimations();
+
+            const robos = document.querySelectorAll('.robo-animated');
+            robos.forEach(robo => {
+                robo.addEventListener('click', () => {
+                    robo.classList.add('shake');
+                    setTimeout(() => robo.classList.remove('shake'), 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
