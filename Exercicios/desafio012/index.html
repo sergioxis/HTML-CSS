@@ -76,7 +76,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      background-attachment: fixed; /* Efeito Parallax */
+      background-attachment: fixed; /* Efeito Parallax no Desktop */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -135,8 +135,10 @@
       border-top: 1px solid #1e293b;
     }
 
-    /* Responsividade */
-    @media (max-width: 640px) {
+    /* ===================================================
+       AJUSTES DE RESPONSIVIDADE E PARALLAX EM CELULARES
+       =================================================== */
+    @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
       }
@@ -144,7 +146,16 @@
         font-size: 1.1rem;
       }
       .section-parallax {
-        background-attachment: scroll; /* Melhora a performance em celulares */
+        background-attachment: scroll; /* Desativa a rolagem fixa no celular para não travar */
+        background-position: center;
+        min-height: 50vh;
+      }
+    }
+
+    /* Tratamento específico para iOS (Safari no iPhone/iPad) */
+    @supports (-webkit-touch-callout: none) {
+      .section-parallax {
+        background-attachment: scroll;
       }
     }
   </style>
@@ -258,9 +269,9 @@
 
   <!-- Rodapé -->
   <footer>
-  <p>Site criado para exibição do poema Cordel Moderno &copy; 2026</p>
-  <p class="creditos-dev">Desenvolvido por <span>Sergio Borges</span></p>
-</footer>
+    <p>Site criado para exibição do poema Cordel Moderno &copy; 2026</p>
+    <p class="creditos-dev">Desenvolvido por <span>Sergio Borges</span></p>
+  </footer>
 
 </body>
 </html>
