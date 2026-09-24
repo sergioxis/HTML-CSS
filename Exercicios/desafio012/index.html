@@ -33,7 +33,7 @@
       padding: 4rem 1rem 3rem 1rem;
       border-bottom: 4px solid #334155;
       position: relative;
-      z-index: 2;
+      z-index: 10;
     }
 
     header h1 {
@@ -67,7 +67,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      z-index: 2;
+      z-index: 10;
     }
 
     .section-text-alt {
@@ -75,7 +75,7 @@
     }
 
     /* ===================================================
-       PARALLAX COMPATÍVEL COM DESKTOP E MOBILE (CELULAR)
+       PARALLAX COMPATÍVEL COM DIVERSAS IMAGENS (MOBILE/PC)
        =================================================== */
     .section-parallax {
       min-height: 60vh;
@@ -84,10 +84,10 @@
       justify-content: center;
       padding: 4rem 1.5rem;
       position: relative;
-      overflow: hidden;
+      /* O clip-path recorta o elemento ::before para que a imagem só apareça dentro deste bloco */
+      clip-path: inset(0 0 0 0);
     }
 
-    /* Tática do elemento fixo relativo ao fundo */
     .section-parallax::before {
       content: "";
       position: fixed;
@@ -102,11 +102,12 @@
       z-index: -1;
     }
 
-    /* Imagens de Fundo */
+    /* Imagem 1 no fundo do primeiro bloco Parallax */
     .bg-img-1::before {
       background-image: url('imagens/background001.jpg');
     }
 
+    /* Imagem 2 no fundo do segundo bloco Parallax */
     .bg-img-2::before {
       background-image: url('imagens/background002.jpg');
     }
@@ -129,7 +130,7 @@
       width: 100%;
       max-width: 600px;
       position: relative;
-      z-index: 2;
+      z-index: 5;
     }
 
     .stanza {
@@ -154,7 +155,7 @@
       font-size: 0.95rem;
       border-top: 1px solid #1e293b;
       position: relative;
-      z-index: 2;
+      z-index: 10;
     }
 
     /* Responsividade */
