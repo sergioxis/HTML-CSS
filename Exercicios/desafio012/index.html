@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cordel Moderno - Milton Duarte</title>
+  
+  <!-- Fontes do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Sriracha&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset e Estilos Gerais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Sriracha', cursive;
+      background-color: #0f172a;
+      color: #1e293b;
+      line-height: 1.8;
+      font-size: 1.25rem;
+    }
+
+    header {
+      background-color: #020617;
+      color: #ffffff;
+      text-align: center;
+      padding: 4rem 1rem 3rem 1rem;
+      border-bottom: 4px solid #334155;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #fbbf24;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      color: #94a3b8;
+    }
+
+    header p a {
+      color: #f59e0b;
+      text-decoration: none;
+    }
+
+    header p a:hover {
+      text-decoration: underline;
+    }
+
+    /* Estilos dos blocos de texto normais */
+    .section-text {
+      background-color: #ffffff;
+      padding: 3.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-text-alt {
+      background-color: #f8fafc;
+    }
+
+    /* Estilos das seções Parallax */
+    .section-parallax {
+      min-height: 70vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed; /* Efeito Parallax */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+      position: relative;
+    }
+
+    /* Imagens de Fundo */
+    .bg-img-1 {
+      background-image: url('imagens/background001.jpg');
+    }
+
+    .bg-img-2 {
+      background-image: url('imagens/background002.jpg');
+    }
+
+    /* Container para os versos (estilo papel/sombra) */
+    .stanzas-container {
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .stanzas-card {
+      background-color: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      color: #f8fafc;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .stanza {
+      margin-bottom: 2rem;
+    }
+
+    .stanza:last-child {
+      margin-bottom: 0;
+    }
+
+    .stanza p {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #020617;
+      color: #64748b;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-family: 'Lora', serif;
+      font-size: 0.95rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    /* Responsividade */
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      body {
+        font-size: 1.1rem;
+      }
+      .section-parallax {
+        background-attachment: scroll; /* Melhora a performance em celulares */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Cordel Moderno</h1>
+    <p>Por <strong>Milton Duarte</strong> | Fonte: <a href="https://www.recantodasletras.com.br/poesias/3186743" target="_blank" rel="noopener">Recanto das Letras</a></p>
+  </header>
+
+  <main>
+
+    <!-- Bloco 1: Texto Comum -->
+    <section class="section-text">
+      <div class="stanzas-container">
+        <div class="stanza">
+          <p>Estou ficando cansado</p>
+          <p>Da tal tecnologia</p>
+          <p>Só se fala por e-mail</p>
+          <p>Mensagem curta e fria</p>
+          <p>Twitter e Facebook</p>
+          <p>Antes que eu caduque</p>
+          <p>Vou dizer tudo em poesia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloco 2: Parallax 1 -->
+    <section class="section-parallax bg-img-1">
+      <div class="stanzas-card">
+        <div class="stanza">
+          <p>Não é mais como era antes</p>
+          <p>É tudo abreviado</p>
+          <p>"Você" só tem duas letras</p>
+          <p>O "O" e o "E" foi riscado</p>
+          <p>Para declarar o amor</p>
+          <p>Basta botar uma flor</p>
+          <p>E um coração desenhado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloco 3: Texto Comum -->
+    <section class="section-text section-text-alt">
+      <div class="stanzas-container">
+        <div class="stanza">
+          <p>Arroba agora não pesa</p>
+          <p>É parte de um endereço</p>
+          <p>Ponto final nem se usa</p>
+          <p>Ou vai até no começo</p>
+          <p>Agora é .com</p>
+          <p>Se o saite é muito bom</p>
+          <p>Ele vale um alto preço.</p>
+        </div>
+        
+        <div class="stanza" style="margin-top: 2.5rem;">
+          <p>Pra piorar a liguagem</p>
+          <p>O emoticom é um risco</p>
+          <p>Tem símbolo para tudo</p>
+          <p>Ponto e vírgula e um asterisco</p>
+          <p>Um beijo significa</p>
+          <p>Pra entender como fica</p>
+          <p>Decifre esse rabisco.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloco 4: Parallax 2 -->
+    <section class="section-parallax bg-img-2">
+      <div class="stanzas-card">
+        <div class="stanza">
+          <p>Tenho saudade das cartas</p>
+          <p>Escritas com a própria mão</p>
+          <p>Mandava no mês de Junho</p>
+          <p>Só chegava no Verão</p>
+          <p>Mas matava a saudade</p>
+          <p>Era texto de verdade</p>
+          <p>Nas linhas do coração.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloco 5: Texto Comum Final -->
+    <section class="section-text">
+      <div class="stanzas-container">
+        <div class="stanza">
+          <p>Agora, escrevo e envio</p>
+          <p>Chegando na mesma hora</p>
+          <p>Mas quando vou prosear</p>
+          <p>A pessoa foi embora</p>
+          <p>Abriu outro aplicativo</p>
+          <p>O mundo ficou cativo</p>
+          <p>Da tecnologia do agora.</p>
+        </div>
+
+        <div class="stanza" style="margin-top: 2.5rem;">
+          <p>Felizmente, pra orar</p>
+          <p>Não precisa de internet</p>
+          <p>Deus escuta todo mundo</p>
+          <p>Se quiser, faça esse teste</p>
+          <p>Dois pontos são dois joelhos</p>
+          <p>Seus lábios são aparelhos</p>
+          <p>Deixe que Deus interprete.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+  <p>Site criado para exibição do poema Cordel Moderno &copy; 2026</p>
+  <p class="creditos-dev">Desenvolvido por <span>Sergio Borges</span></p>
+</footer>
+
+</body>
+</html>
