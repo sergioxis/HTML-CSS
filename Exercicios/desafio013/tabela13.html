@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela Estilo Planilha</title>
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    background: #ffffff;
+    margin: 0;
+    padding: 20px;
+    /* Alinha a tabela no canto superior esquerdo */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
+
+  /* Container com scroll horizontal em telas pequenas */
+  .tabela-container {
+    width: auto;
+    overflow-x: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    font-size: 18px;
+    color: #000;
+    min-width: 360px;
+  }
+
+  th, td {
+    border: 1px solid #7a7a7a;
+    text-align: center;
+    vertical-align: middle;
+    padding: 6px 10px;
+    min-width: 70px;
+    height: 32px;
+  }
+
+  /* Fundo cinza claro das células de dados */
+  .cinza {
+    background: #d3d3d3;
+  }
+
+  /* Borda verde na célula 15 (canto inferior direito) */
+  .borda-verde {
+    border: 2px solid #4caf50;
+  }
+
+  /* ===== RESPONSIVIDADE ===== */
+  @media (max-width: 500px) {
+    body {
+      padding: 10px;
+    }
+
+    table {
+      font-size: 14px;
+      min-width: 300px;
+    }
+
+    th, td {
+      min-width: 50px;
+      height: 28px;
+      padding: 4px 6px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    table {
+      font-size: 12px;
+      min-width: 260px;
+    }
+
+    th, td {
+      min-width: 40px;
+      height: 24px;
+      padding: 3px 4px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="tabela-container">
+    <table>
+      <tbody>
+        <!-- Linha 1 -->
+        <tr>
+          <td class="cinza">1</td>
+          <td class="cinza">2</td>
+          <td class="cinza" rowspan="2">3</td>
+          <td class="cinza">4</td>
+        </tr>
+
+        <!-- Linha 2 -->
+        <tr>
+          <td class="cinza">5</td>
+          <td class="cinza">6</td>
+          <td class="cinza">7</td>
+        </tr>
+
+        <!-- Linha 3 -->
+        <tr>
+          <td class="cinza" colspan="3">8</td>
+          <td class="cinza">9</td>
+        </tr>
+
+        <!-- Linha 4 -->
+        <tr>
+          <td class="cinza" rowspan="2">10</td>
+          <td class="cinza" colspan="2">11</td>
+          <td class="cinza">12</td>
+        </tr>
+
+        <!-- Linha 5 -->
+        <tr>
+          <td class="cinza">13</td>
+          <td class="cinza">14</td>
+          <td class="cinza">15</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
