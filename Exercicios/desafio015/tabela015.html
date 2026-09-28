@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Tabela de Notas com Cálculo Automático</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 750px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  th, td {
+    border: 1px solid #999;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  thead th {
+    background-color: #7a7a7a;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  td.area, th.area {
+    background-color: #d3d3d3;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  td.disciplina {
+    background-color: #e6e6e6;
+  }
+
+  td.nota {
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+
+  /* Campos de input das notas */
+  td.nota input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  /* Célula da média (resultado) */
+  td.media-valor {
+    text-align: center;
+    font-weight: bold;
+    background-color: #eaf6ff;
+  }
+
+  /* Cores condicionais das médias */
+  .media-baixa {
+    color: #d10000; /* Vermelho */
+  }
+
+  .media-alta {
+    color: #1a8f1a; /* Verde */
+  }
+
+  /* Linhas de média geral */
+  tr.media td {
+    background-color: #7a7a7a;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  tr.media td.media-label {
+    text-align: left;
+    padding-left: 15px;
+  }
+
+  /* Para garantir que a cor da média geral também se aplique sobre o fundo cinza */
+  tr.media td.media-baixa {
+    color: #ff4d4d;
+  }
+
+  tr.media td.media-alta {
+    color: #7CFC7C;
+  }
+
+  /* Botão */
+  .btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  button {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  button:hover {
+    background-color: #1a252f;
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <table id="tabelaNotas">
+    <thead>
+      <tr>
+        <th class="area" rowspan="2">Área</th>
+        <th rowspan="2">Disciplinas</th>
+        <th colspan="2">Notas</th>
+        <th rowspan="2">Média</th>
+      </tr>
+      <tr>
+        <th>Nota 1</th>
+        <th>Nota 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Exatas -->
+      <tr>
+        <td class="area" rowspan="4">Exatas</td>
+        <td class="disciplina">Matemática</td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="media-valor">0.0</td>
+      </tr>
+      <tr>
+        <td class="disciplina">Física</td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="media-valor">0.0</td>
+      </tr>
+      <tr>
+        <td class="disciplina">Química</td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="media-valor">0.0</td>
+      </tr>
+      <tr>
+        <td class="disciplina">Biologia</td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="media-valor">0.0</td>
+      </tr>
+
+      <!-- Média de Exatas -->
+      <tr class="media">
+        <td colspan="4" class="media-label">Média de Exatas</td>
+        <td id="mediaExatas">0.0</td>
+      </tr>
+
+      <!-- Humanas -->
+      <tr>
+        <td class="area" rowspan="2">Humanas</td>
+        <td class="disciplina">História</td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="media-valor">0.0</td>
+      </tr>
+      <tr>
+        <td class="disciplina">Geografia</td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="nota"><input type="number" step="0.1" min="0" max="10" value="0"></td>
+        <td class="media-valor">0.0</td>
+      </tr>
+
+      <!-- Média de Humanas -->
+      <tr class="media">
+        <td colspan="4" class="media-label">Média de Humanas</td>
+        <td id="mediaHumanas">0.0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="btn-container">
+    <button onclick="calcularMedias()">Calcular Médias</button>
+  </div>
+</div>
+
+<script>
+  function aplicarCorMedia(elemento, valor) {
+    // Remove classes antigas
+    elemento.classList.remove('media-baixa', 'media-alta');
+
+    if (valor < 5) {
+      elemento.classList.add('media-baixa'); // Vermelho
+    } else {
+      elemento.classList.add('media-alta'); // Verde
+    }
+  }
+
+  function calcularMedias() {
+    const linhas = document.querySelectorAll('#tabelaNotas tbody tr');
+
+    let somaExatas = 0, countExatas = 0;
+    let somaHumanas = 0, countHumanas = 0;
+    let areaAtual = '';
+
+    linhas.forEach(linha => {
+      const celulaArea = linha.querySelector('td.area');
+      if (celulaArea) {
+        areaAtual = celulaArea.textContent.trim();
+      }
+
+      const inputs = linha.querySelectorAll('td.nota input');
+      const celulaMedia = linha.querySelector('td.media-valor');
+
+      if (inputs.length === 2 && celulaMedia) {
+        const nota1 = parseFloat(inputs[0].value) || 0;
+        const nota2 = parseFloat(inputs[1].value) || 0;
+        const media = (nota1 + nota2) / 2;
+
+        celulaMedia.textContent = media.toFixed(1);
+        aplicarCorMedia(celulaMedia, media);
+
+        if (areaAtual === 'Exatas') {
+          somaExatas += media;
+          countExatas++;
+        } else if (areaAtual === 'Humanas') {
+          somaHumanas += media;
+          countHumanas++;
+        }
+      }
+    });
+
+    const mediaExatas = countExatas > 0 ? (somaExatas / countExatas) : 0;
+    const mediaHumanas = countHumanas > 0 ? (somaHumanas / countHumanas) : 0;
+
+    const elExatas = document.getElementById('mediaExatas');
+    const elHumanas = document.getElementById('mediaHumanas');
+
+    elExatas.textContent = mediaExatas.toFixed(1);
+    elHumanas.textContent = mediaHumanas.toFixed(1);
+
+    aplicarCorMedia(elExatas, mediaExatas);
+    aplicarCorMedia(elHumanas, mediaHumanas);
+  }
+
+  document.querySelectorAll('#tabelaNotas input').forEach(input => {
+    input.addEventListener('input', calcularMedias);
+  });
+
+  calcularMedias();
+</script>
+
+</body>
+</html>
