@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Query</title>
-    <!-- Importando os ícones do Google Material Design -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
     <header>
         <h1>Meu Site</h1>
-        <!-- Ícone de hambúrguer para o celular -->
-        <i id="burguer" class="material-icons">menu</i>
+        <!-- Adicionamos um evento 'onclick' para chamar a função -->
+        <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
         <menu id="itens">
             <ul>
                 <li><a href="#">Opção 1</a></li>
@@ -26,12 +25,19 @@
     <main>
         <article>
             <h2>Testando media queries</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id et cumque amet error quia? Vel id quidem amet ratione nulla maxime architecto quod vero itaque cumque, deleniti iusto corrupti dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aspernatur, neque incidunt minima ipsum perferendis quidem, molestias officiis aperiam fuga, nulla at eligendi non quo distinctio voluptates praesentium blanditiis perspiciatis.</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corrupti consequuntur earum officiis corporis doloremque perferendis at? Quis error aperiam dolorum id nam obcaecati inventore amet eaque fugiat? Eaque, dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fuga deserunt laborum a, beatae tempora maxime aut, ipsum repellendus necessitatibus praesentium sunt et unde quia facere architecto consectetur nemo consequuntur!</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam cumque tempora reiciendis consequatur animi aspernatur sed quidem quia fugiat. Voluptatem, voluptate. Vel, repellendus voluptate! In modi laudantium impedit doloremque sapiente! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ea ducimus rem sunt eligendi, odio quo qui, esse fugit consequuntur provident perspiciatis saepe impedit veniam corporis sed culpa nulla possimus?</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id et cumque amet error quia? Vel id quidem amet ratione nulla maxime architecto quod vero itaque cumque, deleniti iusto corrupti dicta.</p>
         </article>
     </main>
+
+    <!-- Script para fazer o menu abrir e fechar -->
+    <script>
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none';
+            } else {
+                itens.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>

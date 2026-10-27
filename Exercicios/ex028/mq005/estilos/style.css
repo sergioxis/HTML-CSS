@@ -21,7 +21,7 @@ header > h1 {
     text-align: center;
 }
 
-/* Estilo do ícone de hambúrguer no celular */
+/* Ícone do menu hambúrguer */
 i#burguer {
     display: block;
     background-color: darkcyan;
@@ -36,7 +36,7 @@ i#burguer:hover {
     color: darkcyan;
 }
 
-/* No celular, o menu começa fechado (escondido) */
+/* No celular, o menu começa fechado */
 menu {
     display: none;
 }
@@ -79,17 +79,17 @@ article > p {
 }
 
 /* ==========================================
-   MEDIA QUERY PARA TELAS MAIORES (TABLETS/DESKTOP)
+   MEDIA QUERY PARA COMPUTADOR / TELAS GRANDES
    ========================================== */
 @media screen and (min-width: 768px) {
-    /* Esconde o ícone de hambúrguer no computador/tablet */
+    /* Some o ícone de hambúrguer */
     i#burguer {
         display: none;
     }
 
-    /* Mostra o menu em formato de barra horizontal */
+    /* Força o menu a aparecer sempre na tela grande, ignorando o JS */
     menu {
-        display: block;
+        display: block !important;
     }
 
     menu > ul {
