@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Halloween</title>
+    
+    <!-- Importação das fontes Poppins e Creepster (Terror) do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Ligação ao ficheiro CSS externo -->
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+
+    <!-- Caveira a voar/mexer pela tela com a boca a sorrir -->
+    <div class="skull-container">
+        <div class="skull-character">
+            <span class="skull">💀</span>
+        </div>
+    </div>
+
+    <div class="login-card">
+        <div class="login-form-container">
+            <!-- Título com fonte de terror e letras animadas -->
+            <h2 class="login-title">
+                <span style="--i: 1;">L</span>
+                <span style="--i: 2;">o</span>
+                <span style="--i: 3;">g</span>
+                <span style="--i: 4;">i</span>
+                <span style="--i: 5;">n</span>
+            </h2>
+            <p>Entre se tiver coragem... Faça login para acessar o seu covil de configurações 🎃.</p>
+            
+            <form>
+                <div class="input-group">
+                    <div class="input-icon">💀</div>
+                    <input type="email" placeholder="Seu e-mail sombrio" required>
+                </div>
+                
+                <div class="input-group">
+                    <div class="input-icon">🔑</div>
+                    <input type="password" placeholder="Senha (8 dígitos)" maxlength="8" pattern="[0-9]{8}" required>
+                </div>
+
+                <button type="submit" class="btn-entrar">Entrar no Covil</button>
+                <a href="#" class="btn-esqueci">Esqueci a senha 👻</a>
+            </form>
+        </div>
+        
+        <div class="login-image">
+            <div class="halloween-art">
+                <span class="pumpkin">🎃</span>
+                <p>Noite das Bruxas</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript para animar o título letra por letra -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const letras = document.querySelectorAll('.login-title span');
+            letras.forEach((letra, index) => {
+                setTimeout(() => {
+                    letra.classList.add('ativa');
+                }, (index + 1) * 150);
+            });
+        });
+    </script>
+</body>
+</html>
